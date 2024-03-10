@@ -14,8 +14,6 @@ class StartupViewModel extends BaseViewModel {
 
     if (_authenticationService.isAuthenticated()) {
       _navigationService.replaceWithHomeView();
-    } else {
-
-    }
+    } else {}
   }
 }

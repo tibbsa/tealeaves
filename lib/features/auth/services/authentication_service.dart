@@ -1,6 +1,5 @@
 class AuthenticationService {
-  bool isAuthenticated()
-  {
+  bool isAuthenticated() {
     return false;
   }
 }

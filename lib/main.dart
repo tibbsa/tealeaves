@@ -4,12 +4,17 @@ import 'package:tealeaves/app/app.dialogs.dart';
 import 'package:tealeaves/app/app.locator.dart';
 import 'package:tealeaves/app/app.router.dart';
 import 'package:stacked_services/stacked_services.dart';
+import 'package:tealeaves/services/license_repository_service.dart';
+import 'package:tealeaves/theme/app_theme.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await setupLocator();
   setupDialogUi();
   setupBottomSheetUi();
+
+  locator<LicenseRepositoryService>().initialize();
+
   runApp(const MainApp());
 }
 
@@ -25,6 +30,7 @@ class MainApp extends StatelessWidget {
       navigatorObservers: [
         StackedService.routeObserver,
       ],
+      theme: AppTheme.getTheme(),
     );
   }
 }
