@@ -1,5 +1,6 @@
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/foundation.dart';
 import 'package:tealeaves/app/app.logger.dart';
 import 'package:tealeaves/firebase_options.dart';
 
@@ -19,6 +20,12 @@ class FirebaseService
 
     _firebaseAnalytics = FirebaseAnalytics.instance;
 
+    // disable analytics collection on debug mode
+    if (! kReleaseMode) {
+      logger.i('Analytics collection disabled in debug mode');
+      await _firebaseAnalytics.setAnalyticsCollectionEnabled(false);
+    }
+    
     logger.v('Firebase app initialized');
   }
 }
