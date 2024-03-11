@@ -1,3 +1,4 @@
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tealeaves/app/app.bottomsheets.dart';
@@ -5,6 +6,7 @@ import 'package:tealeaves/app/app.dialogs.dart';
 import 'package:tealeaves/app/app.locator.dart';
 import 'package:tealeaves/app/app.router.dart';
 import 'package:stacked_services/stacked_services.dart';
+import 'package:tealeaves/services/firebase_service.dart';
 import 'package:tealeaves/services/license_repository_service.dart';
 import 'package:tealeaves/theme/app_theme.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -12,16 +14,14 @@ import 'firebase_options.dart';
 
 Future<void> main() async {
   GoogleFonts.config.allowRuntimeFetching = false;
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
-  
+
   WidgetsFlutterBinding.ensureInitialized();
   await setupLocator();
+  await locator<FirebaseService>().onAppStartup();
+  locator<LicenseRepositoryService>().initialize();
+
   setupDialogUi();
   setupBottomSheetUi();
-
-  locator<LicenseRepositoryService>().initialize();
 
   runApp(const MainApp());
 }

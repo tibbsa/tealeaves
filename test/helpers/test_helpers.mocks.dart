@@ -688,10 +688,28 @@ class MockAuthenticationService extends _i1.Mock
         returnValue: false,
         returnValueForMissingStub: false,
       ) as bool);
+
+  @override
+  void logout() => super.noSuchMethod(
+        Invocation.method(
+          #logout,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
 }
 
 /// A class which mocks [LicenseRepositoryService].
 ///
 /// See the documentation for Mockito's code generation for more information.
 class MockLicenseRepositoryService extends _i1.Mock
-    implements _i8.LicenseRepositoryService {}
+    implements _i8.LicenseRepositoryService {
+  @override
+  void initialize() => super.noSuchMethod(
+        Invocation.method(
+          #initialize,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
+}

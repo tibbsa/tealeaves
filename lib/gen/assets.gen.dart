@@ -12,8 +12,8 @@ import 'package:flutter/widgets.dart';
 class $AssetsGoogleFontsGen {
   const $AssetsGoogleFontsGen();
 
-  /// File path: assets/google_fonts/LICENSE.txt
-  String get license => 'assets/google_fonts/LICENSE.txt';
+  /// File path: assets/google_fonts/APACHE.txt
+  String get apache => 'assets/google_fonts/APACHE.txt';
 
   /// File path: assets/google_fonts/Roboto-Black.ttf
   String get robotoBlack => 'assets/google_fonts/Roboto-Black.ttf';
@@ -54,7 +54,7 @@ class $AssetsGoogleFontsGen {
 
   /// List of all assets
   List<String> get values => [
-        license,
+        apache,
         robotoBlack,
         robotoBlackItalic,
         robotoBold,

@@ -1,3 +1,4 @@
+import 'package:tealeaves/services/firebase_service.dart';
 import 'package:tealeaves/ui/bottom_sheets/notice/notice_sheet.dart';
 import 'package:tealeaves/ui/dialogs/info_alert/info_alert_dialog.dart';
 import 'package:tealeaves/ui/views/home/home_view.dart';
@@ -20,6 +21,7 @@ import 'package:tealeaves/services/license_repository_service.dart';
     LazySingleton(classType: NavigationService),
     LazySingleton(classType: AuthenticationService),
     LazySingleton(classType: LicenseRepositoryService),
+    Singleton(classType: FirebaseService)
 // @stacked-service
   ],
   bottomsheets: [
@@ -30,5 +32,6 @@ import 'package:tealeaves/services/license_repository_service.dart';
     StackedDialog(classType: InfoAlertDialog),
     // @stacked-dialog
   ],
+  logger: StackedLogger(),
 )
 class App {}
