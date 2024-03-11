@@ -1,4 +1,4 @@
-package com.example.tealeaves
+package ca.tibbs.tealeaves
 
 import io.flutter.embedding.android.FlutterActivity
 
