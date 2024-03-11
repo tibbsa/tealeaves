@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "237230438068",
+    "project_id": "tealeaves-90703",
+    "storage_bucket": "tealeaves-90703.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:237230438068:android:dba01285192be1defb89e1",
+        "android_client_info": {
+          "package_name": "ca.tibbs.tealeaves"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAt-FoSP7i8sg6tgqz15al98dk3JiCscKw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

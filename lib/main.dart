@@ -7,10 +7,15 @@ import 'package:tealeaves/app/app.router.dart';
 import 'package:stacked_services/stacked_services.dart';
 import 'package:tealeaves/services/license_repository_service.dart';
 import 'package:tealeaves/theme/app_theme.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
 Future<void> main() async {
   GoogleFonts.config.allowRuntimeFetching = false;
-
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  
   WidgetsFlutterBinding.ensureInitialized();
   await setupLocator();
   setupDialogUi();
