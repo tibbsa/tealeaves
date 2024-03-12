@@ -19,13 +19,13 @@ class FirebaseService
     );
 
     _firebaseAnalytics = FirebaseAnalytics.instance;
-
+    
     // disable analytics collection on debug mode
     if (! kReleaseMode) {
       logger.i('Analytics collection disabled in debug mode');
       await _firebaseAnalytics.setAnalyticsCollectionEnabled(false);
     }
-    
+
     logger.v('Firebase app initialized');
   }
 }
